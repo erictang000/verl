@@ -3,7 +3,7 @@ set -x
 # If you are using vllm<=0.6.3, you might need to set the following environment variable to avoid bugs:
 # export VLLM_ATTENTION_BACKEND=XFORMERS
 
-python3 -m verl.trainer.main_ppo \
+uv run --isolated -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files=/mnt/cluster_storage/gsm8k/train.parquet \
     data.val_files=/mnt/cluster_storage/gsm8k/test.parquet \
